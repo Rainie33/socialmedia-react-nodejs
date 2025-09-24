@@ -28,7 +28,7 @@ const Navbar = () => {
         <MdOutlineEmail />
         <FaRegBell />
         <div className="user">
-          <img src="/Bubbles.avif" alt="" />
+          <img src="/cat.jpg" alt="" />
           <span>Rainie</span>
         </div>
       </div>
