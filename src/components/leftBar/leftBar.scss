@@ -1,5 +1,16 @@
 .leftBar {
   flex: 2;
+  position: sticky;
+  top: 60px;
+  // leftBar 的高度為視窗高度減去 60px，避免被頂部的導航列遮住
+  height: calc(100vh - 60px);
+
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .container {
     padding: 20px;
 
@@ -39,6 +50,7 @@
 
         svg {
           font-size: 20px;
+          color: #e2a6a8;
         }
       }
 
