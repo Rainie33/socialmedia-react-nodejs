@@ -1,70 +1,84 @@
+@import '../../style.scss';
+
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  height: 60px;
-  border-bottom: 1px solid lightgray;
-
-  // 向下捲動時 navbar 始終固定在頂部
-  position: sticky;
-  top: 0;
-  background-color: white;
-
-  .left {
+  @include themify($themes) {
     display: flex;
     align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 60px;
+    // border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid themed('border');
 
-    span {
-      font-weight: bold;
-      font-size: 20px;
-      color: #a76971;
-    }
+    // 向下捲動時 navbar 始終固定在頂部
+    position: sticky;
+    top: 0;
+    // background-color: white;
+    background-color: themed(bg);
+    color: themed(textColor);
 
-    svg {
-      font-size: 20px;
-      color: #a76971;
-      cursor: pointer;
-    }
-
-    .search {
+    .left {
       display: flex;
       align-items: center;
-      gap: 10px;
-      border: 1px solid lightgray;
-      border-radius: 50px;
-      padding: 5px;
+      gap: 30px;
 
-      input {
-        border: none;
-        width: 220px;
+      span {
+        font-weight: bold;
+        font-size: 20px;
+        color: #a76971;
+      }
+
+      svg {
+        font-size: 20px;
+        color: #a76971;
+        cursor: pointer;
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        // border: 1px solid lightgray;
+        border: 1px solid themed('border');
+        border-radius: 50px;
+        padding: 5px;
+
+        input {
+          border: none;
+          width: 220px;
+          background-color: transparent;
+          color: themed(textColor);
+        }
       }
     }
-  }
 
-  .right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    svg {
-      font-size: 20px;
-      color: #a76971;
-      cursor: pointer;
-    }
-
-    .user {
+    .right {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 500;
+      gap: 20px;
 
-      img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        object-fit: cover;
+      svg {
+        font-size: 20px;
+        color: #a76971;
+        cursor: pointer;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+          color: #a76971;
+        }
       }
     }
   }

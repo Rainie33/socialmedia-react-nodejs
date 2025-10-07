@@ -5,6 +5,9 @@ import Navbar from './components/navbar/Navbar';
 import RightBar from './components/rightBar/RightBar';
 import Home from './pages/home/Home';
 import Profile from './pages/profile/Profile';
+import './style.scss';
+import { useContext } from 'react';
+import { DarkModeContext } from './context/darkModeContext';
 
 import {
   createBrowserRouter,
@@ -18,9 +21,11 @@ function App() {
   // currentUser 用來表示使用者是否已登入
   const currentUser = true;
 
+  const { darkMode } = useContext(DarkModeContext);
+
   const Layout = () => {
     return (
-      <div>
+      <div className={`theme-${darkMode ? 'dark' : 'light'}`}>
         <Navbar />
         <div style={{ display: 'flex' }}>
           <LeftBar />
